@@ -1,0 +1,166 @@
+"/user":
+  post:
+      tags:
+      - Crear Cuenta 
+      summary: Crear usuario
+      description: 'Crea un usuario en la base de datos'
+      requestBody:
+        description: Body to create a user
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/User"
+      responses:
+        '201':
+          description: Usuario creado
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User"
+"/login":
+  post:
+      tags:
+      - Iniciar Sesion  
+      summary: Iniciar sesion
+      description: 'Inicia sesion con un usuario de la base de datos'
+      requestBody:
+        description: Login
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Login"
+      responses:
+        '201':
+          description: Bienvenido a Glyvest
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Login"
+"/user/edit":
+  put:
+      security:
+      - bearerAuth: []
+      tags:
+      - Usuarios 
+      summary: Editar usuario
+      description: 'Edita un usuario de la base de datos'
+      requestBody:
+        description: Body to edit a user
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/User"
+      responses:
+        '201':
+          description: Usuario editado
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/User"
+"/user/delete/{username}":
+  delete:
+    security:
+      - bearerAuth: []
+    tags:
+    - Usuarios 
+    summary: Eliminar Usuario
+    description: 'Eliminar un usuario de la base de datos'
+    parameters:
+    - name: username
+      in: path
+      description: Pon el nombre del usuario
+      required: true
+      schema:
+        type: string
+    responses:
+      '201':
+        description: Usuario eliminado
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/User"
+"/file":
+  post:
+    security:
+      - bearerAuth: []
+    tags:
+      - Imagenes y videos
+    summary: Subir Imagen o video
+    description: 'Sube una imagen a la carpeta media'
+    operationId: uploadFile
+    parameters:
+      - name: additionalMetadata
+        in: query
+        description: Additional Metadata
+        required: false
+        schema:
+          type: string
+    requestBody:
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    responses:
+      '200':
+        description: successful operation
+"/file/see":
+  get:
+    security:
+      - bearerAuth: []
+    tags:
+      - Imagenes y videos
+    summary: ver publicacion
+    description: 'Ver las imagenes que estan subidas'
+    responses:
+      '200':
+        description: successful operation
+        content:
+         aplication/json:
+          schema:
+            type: array
+            items:
+             $ref: "#/components/schemas/Publication"
+"/file/delete/{id}":
+   delete:
+    security:
+      - bearerAuth: []
+    tags:
+    - Imagenes y videos
+    summary: Eliminar publicacion
+    description: 'Eliminar una publicacion de la base de datos'
+    parameters:
+    - name: id
+      in: path
+      description: Pon la id de la publicacion
+      required: true
+      schema:
+        type: string
+    responses:
+      '201':
+        description: Usuario eliminado
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Publication"
+"/correo":
+  post:
+      security:
+      - bearerAuth: []
+      tags:
+      - Restablecer contraseña 
+      summary: Restablecer contraseña
+      description: 'Enviar correo para restablecer contraseña'
+      requestBody:
+        description: Login
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Correo"
+      responses:
+        '201':
+          description: Correo enviado
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Correo"

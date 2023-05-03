@@ -1,0 +1,34 @@
+User:
+  type: object
+  properties:
+    name:
+      type: string
+    username:
+      type: string
+    email:
+      type: string
+    password: 
+      type: string
+Login:
+  type: object
+  properties:
+    username:
+      type: string
+    password:
+      type: string
+Publication:
+  type: object
+  properties:
+    file:
+      type: string
+    ruta:
+      type: string
+    like:
+      type: number
+    user:
+      type: string
+Correo:
+  type: object
+  properties:
+    to:
+      type: string

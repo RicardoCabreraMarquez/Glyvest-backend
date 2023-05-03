@@ -1,0 +1,10 @@
+bearerAuth:
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: Token de autenticación JWT con los usuarios que esten registrado y logeado en la pagina web".
+  name: Authorization
+  in: header
+
+security: 
+  - bearerAuth: []
