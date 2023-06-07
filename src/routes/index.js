@@ -22,17 +22,14 @@ router.post('/login', authController.login, (req, res) => {
 
     if (!usuario) {
       return res.status(401).json({ error: 'Usuario y/o contraseña incorrectos' });
-      console.log('Usuario y/o contraseña incorrectos');
     }
 
     if (password !== usuario.password) {
       return res.status(401).json({ error: 'Usuario y/o contraseña incorrectos' });
-      console.log('Usuario y/o contraseña incorrectos');
     }
 
     // Inicio de sesión exitoso
     return res.json({ message: 'Inicio de sesión exitoso' });
-    console.log('Inicio dde sesión exitoso');
   } catch (error) {
     console.error('Error al iniciar sesión:', error);
     return res.status(500).json({ error: 'Error al iniciar sesión' });
