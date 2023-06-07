@@ -8,7 +8,7 @@ async function login(req, res, next) {
     const user = await User.findOne({ username, password });
 
     if (!user) {
-      return res.status(401).json({ message: 'El usuario o la contraseña es incorrecta' });
+      return res.status(401).json({ message: 'El usuario y/o contraseña es incorrecta' });
     }
 
     const token = jwt.sign(
