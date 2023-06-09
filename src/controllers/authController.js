@@ -17,7 +17,13 @@ async function login(req, res, next) {
       { expiresIn: '1h' },
     );
 
-    res.status(200).json({ token, user: username, email: user.email });
+    res.status(200).json({
+      token,
+      user: username,
+      name: user.name,
+      email: user.email,
+      password: user.password,
+    });
   } catch (error) {
     next(error);
   }
