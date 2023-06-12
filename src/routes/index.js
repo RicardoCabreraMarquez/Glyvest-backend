@@ -15,6 +15,6 @@ router.use('/user', UserRouterUserMongodb);
 router.use('/file', UserRouterPublicationMongodb);
 router.post('/login', authController.login);
 
-router.post('/correo', verifyToken, smtpController.enviarCorreo);
+router.post('/correo', verifyToken, smtpController.sendCorreo);
 
 module.exports = router;
