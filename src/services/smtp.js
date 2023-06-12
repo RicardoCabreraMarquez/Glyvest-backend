@@ -34,10 +34,10 @@ function setConfig(smtpConfig) {
   });
 }
 
-async function sendCorreo(content) {
+async function sendMail(content) {
   const { to } = content;
 
-  const info = await transporter.sendCorreo({
+  const info = await transporter.sendMail({
     from: 'eltrancas78@gmail.com',
     to,
     subject: 'Restablecer Contraseña',
@@ -51,29 +51,5 @@ async function sendCorreo(content) {
 
 module.exports = {
   setConfig,
-  sendCorreo,
+  sendMail,
 };
-
-// async function sendCorreo(content) {
-//   const { host, port } = config;
-//   const { to } = content;
-
-//   const transporter = nodemailer.createTransport({
-//     host,
-//     port,
-//     secure: false,
-//   });
-
-//   const info = await transporter.sendMail({
-//     from: 'info@glyvest.com',
-//     to,
-//     subject: 'Restablecer Contraseña',
-//     text: 'Correo para restablecer tu contraseña',
-//   });
-
-//   logger.info(`Message sent: ${info.messageId}`);
-// }
-
-// module.exports = {
-//   sendCorreo,
-// };
