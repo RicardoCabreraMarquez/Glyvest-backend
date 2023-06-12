@@ -37,7 +37,7 @@ function setConfig(smtpConfig) {
 async function sendCorreo(content) {
   const { to } = content;
 
-  const info = await transporter.sendMail({
+  const info = await transporter.sendCorreo({
     from: 'eltrancas78@gmail.com',
     to,
     subject: 'Restablecer Contraseña',
