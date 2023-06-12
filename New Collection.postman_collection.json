@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "40680fdf-3374-4004-a0a6-1b41f58a4c51",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24724488"
+	},
+	"item": [
+		{
+			"name": "Glyvest",
+			"item": [
+				{
+					"name": "Crear Cuenta",
+					"item": [
+						{
+							"name": "localhost:3000/user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"prueba\",\r\n  \"username\": \"pruebita\",\r\n  \"email\": \"prueba@prueba.com\",\r\n  \"password\": \"prueba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://glyvest.onrender.com//user",
+									"protocol": "https",
+									"host": [
+										"glyvest",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Iniciar Sesion",
+					"item": [
+						{
+							"name": "localhost:3000/login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"andreilla\",\r\n  \"password\": \"131313\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://glyvest.onrender.com/login",
+									"protocol": "https",
+									"host": [
+										"glyvest",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Usuarios",
+					"item": [
+						{
+							"name": "localhost:3000/user/edit",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTZjNDAxODM5MjgwODViMjY4NTMiLCJ1c2VybmFtZSI6ImxhcHJ1ZWJhIiwiaWF0IjoxNjg2MzIzNjM1LCJleHAiOjE2ODYzMjcyMzV9.457MjNv9EDl1oYw-8z3xqYhH6VzHlVry2IXGYXi9sjc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "name",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "email",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"prueba\",\r\n  \"username\": \"pruebapruebecita\",\r\n  \"email\": \"prueba@prueba.com\",\r\n  \"password\": \"prueba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://glyvest.onrender.com/user/edit",
+									"protocol": "https",
+									"host": [
+										"glyvest",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"user",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/user/delete/andreillalaratilla",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://glyvest.onrender.com/user/delete/{user}",
+									"protocol": "https",
+									"host": [
+										"glyvest",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"user",
+										"delete",
+										"{user}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Imagenes y videos",
+					"item": [
+						{
+							"name": "localhost:3000/file",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgwNmI3ODk3ZTAwNzA2ODk2ZDMxNWIiLCJ1c2VybmFtZSI6InJpY2hpc3ZxIiwiaWF0IjoxNjg2MjQ1ODIwLCJleHAiOjE2ODYyNDk0MjB9.TLdTRkDCOTwFbs5sV-lvQ6RN3tHnz9LH-dc5RyhSuA8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "myFile",
+											"type": "file",
+											"src": "/C:/Users/eltra/Pictures/Captura.PNG"
+										},
+										{
+											"key": "username",
+											"value": "richisvq",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://glyvest.onrender.com/file",
+									"protocol": "https",
+									"host": [
+										"glyvest",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"file"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/file/see",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgwNmI3ODk3ZTAwNzA2ODk2ZDMxNWIiLCJ1c2VybmFtZSI6ImVsdHJhbmNhczc4IiwiaWF0IjoxNjg2Mzk1MDc1LCJleHAiOjE2ODYzOTg2NzV9.VON_p8vlIP3Dln46PsjTGBzwJ494X09jJ0mOfQhmp3Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://glyvest.onrender.com/file/see",
+									"protocol": "https",
+									"host": [
+										"glyvest",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"file",
+										"see"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "localhost:3000/file/delete/",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://glyvest.onrender.com/file/delete/",
+									"protocol": "https",
+									"host": [
+										"glyvest",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"file",
+										"delete",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restablecer contraseña",
+					"item": [
+						{
+							"name": "localhost:3000/correo",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDg2MzM2YzA5MTBlM2M1OTFmYTU4OTciLCJ1c2VybmFtZSI6ImFuZHJlaWxsYSIsImlhdCI6MTY4NjU5MTQzNCwiZXhwIjoxNjg2NTk1MDM0fQ.uGFraAJcThUobxYmkE7PJ_ELO2eWFcpJoBGpWb6qCD4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"to\": \"rmcabmar@adaits.es\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://glyvest.onrender.com/correo",
+									"protocol": "https",
+									"host": [
+										"glyvest",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"correo"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
